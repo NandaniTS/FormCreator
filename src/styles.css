@@ -1,0 +1,46 @@
+/* Theme tokens: single light theme (no dark-mode override) */
+:root{
+  color-scheme:light;
+  --page:#ffffff;
+  --text:#000000;
+  --muted:#595959;
+  --border:#d9d9d9;
+  --btn-bg:#fadb14;
+  --btn-text:#000000;
+  --placeholder:#8c8c8c;
+  --error:#cf1322;
+  --radius:10px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+
+header{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);background:var(--page)}
+nav,.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.row{margin-top:8px}
+main{max-width:720px;margin:0 auto;padding:16px}
+.card{background:var(--page);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}
+.card h2{margin-top:0}.q{margin-bottom:16px}
+
+/* Buttons: yellow background, black text */
+button{font:inherit;background:var(--btn-bg);color:var(--btn-text);border:1px solid var(--btn-bg);border-radius:var(--radius);padding:6px 14px;cursor:pointer;font-weight:500}
+button:hover{filter:brightness(.95)}
+button:focus-visible{outline:2px solid var(--text);outline-offset:2px}
+/* Selected tab: white bg, black border, theme-yellow text */
+button.on{background:#ffffff;color:var(--btn-bg);border:1px solid var(--text);font-weight:700}
+button.on:hover{filter:none}
+
+/* Inputs: white, rounded, black text, grey placeholder */
+input:not([type=checkbox]):not([type=radio]),textarea,select{
+  width:100%;font:inherit;padding:8px 12px;background:#ffffff;color:var(--text);
+  border:1px solid var(--border);border-radius:var(--radius)}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--btn-bg);border-color:var(--text)}
+::placeholder{color:var(--placeholder);opacity:1}
+input[type=checkbox],input[type=radio]{accent-color:var(--btn-bg)}
+select{accent-color:var(--btn-bg)}
+option:checked{background:var(--btn-bg) linear-gradient(var(--btn-bg),var(--btn-bg));color:var(--btn-text)}
+select.auto{width:auto}
+.title{font-size:1.5rem;font-weight:700}
+
+.opt{display:flex;gap:8px;align-items:center;margin:4px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+.mu{color:var(--muted);font-size:.875rem}.err{color:var(--error);font-size:.875rem}
+@media(max-width:480px){main{padding:8px}header{padding:8px}}
